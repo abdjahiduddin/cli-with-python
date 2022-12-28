@@ -96,11 +96,12 @@ $ logs get [OPTIONS] PATH
 * Get dpkg.log and convert to json
 ![json-default](https://github.com/abdjahiduddin/cli-with-python/blob/main/img/json-default.png?raw=true)
 
+* Get dpkg.log, convert to json and save to custom path
+![json-custom](https://github.com/abdjahiduddin/cli-with-python/blob/main/img/json-custom.png?raw=true)
+
 * Get dpkg.log, convert to text and save to custom path
 ![text-custom](https://github.com/abdjahiduddin/cli-with-python/blob/main/img/text-custom.png?raw=true)
 
-* Get dpkg.log, convert to json and save to custom path
-![json-custom](https://github.com/abdjahiduddin/cli-with-python/blob/main/img/json-custom.png?raw=true)
 
 * Show help for `logs` command
 ![logs-help](https://github.com/abdjahiduddin/cli-with-python/blob/main/img/logs-help.png?raw=true)
