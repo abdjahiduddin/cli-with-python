@@ -11,10 +11,12 @@ DST_PATH = Path(typer.get_app_dir(__app_name__))
     FILE_ERROR,
     FILE_TYPE_ERROR,
     DST_PATH_ERROR,
-) = range(4)
+    CONVERT_ERROR
+) = range(5)
 
 ERRORS = {
     FILE_ERROR: "file not found",
     FILE_TYPE_ERROR: "file type wrong",
-    DST_PATH_ERROR: "destination path wrong or not found",
+    DST_PATH_ERROR: "destination path wrong or not exists",
+    CONVERT_ERROR: "convert file failed"
 }

@@ -20,8 +20,18 @@ def get(
     if isTypeError:
         typer.secho(f'Error: {ERRORS[isTypeError]}',fg=typer.colors.RED)
         raise typer.Exit(1)
+    
+    isDestPathError = convert.isDestPathCorrect(dst)
+    if isDestPathError:
+        typer.secho(f'Error: {ERRORS[isDestPathError]}',fg=typer.colors.RED)
+        raise typer.Exit(1)
 
-    print(path)
+    isError = convert.logs(path, type, dst)
+    if isError:
+        typer.secho(f'Error: {ERRORS[isError]}',fg=typer.colors.RED)
+        raise typer.Exit(1)
+    
+    raise typer.Exit()
 
 def _version_callback(value) -> None:
     if value:
