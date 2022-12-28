@@ -1,9 +1,7 @@
 
 # Logs CLI - Technical Test
 
-Logs CLI merupakan tools untuk mengambil logs file kemudian melakukan konversi menjadi JSON atau Text.
-
-Logs CLI dibangun menggunakan Python 3.
+Logs CLI merupakan tools untuk mengambil logs file kemudian melakukan konversi menjadi JSON atau Text. Logs CLI dibangun menggunakan Python 3.
 
 
 ## Library
@@ -111,4 +109,5 @@ $ logs get [OPTIONS] PATH
 ![logs-get-help](https://github.com/abdjahiduddin/cli-with-python/blob/main/img/logs-get-help.png?raw=true)
 
 * Show Logs CLI version
+
 ![logs-get-help](https://github.com/abdjahiduddin/cli-with-python/blob/main/img/version.png?raw=true)
