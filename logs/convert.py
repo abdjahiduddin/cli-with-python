@@ -2,14 +2,14 @@ import os
 
 from logs import DST_PATH, SUCCESS, DST_PATH_ERROR, FILE_ERROR, FILE_TYPE_ERROR
 
-def isLogsExists(path: str) -> int:
+def isLogsExists(path) -> int:
     isExists = os.path.isfile(path)
     if isExists:
         return SUCCESS
     else:
         return FILE_ERROR
 
-def typeCheck(type: str | None) -> int:
+def typeCheck(type) -> int:
     if type == "text" or type == "json":
         return SUCCESS
     else:
