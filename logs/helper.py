@@ -25,7 +25,7 @@ def isDestPathCorrect(path) -> int:
     else:
         return DST_PATH_ERROR
 
-def logs(path, type, dst) -> int:
+def convertLogs(path, type, dst) -> int:
     writePath = ""
     
     if type == "text":
