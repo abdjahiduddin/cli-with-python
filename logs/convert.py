@@ -20,7 +20,6 @@ def typeCheck(type) -> int:
 def isDestPathCorrect(path) -> int:
     head_tail = os.path.split(path)
     isExists = os.path.isdir(head_tail[0])
-    print(head_tail)
     if head_tail[1] != "" and isExists:
         return SUCCESS
     else:
@@ -48,7 +47,8 @@ def readWrite(src, dst) -> int:
             with open(dst, "w") as writer:
                 for line in reader:
                     writer.write(line)
-        typer.secho(f'Convert file success, you can find your file at {dst}', fg=typer.colors.GREEN)
+        typer.secho(f'Convert file success', fg=typer.colors.GREEN)
+        typer.secho(f'You can find your file at {dst}', fg=typer.colors.GREEN)
         return SUCCESS
     except Exception as e:
         typer.secho(f'{e}',fg=typer.colors.RED)
