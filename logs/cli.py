@@ -13,10 +13,6 @@ def get(
 ):
     '''
     Get Logs File
-
-    Default destination directory: 
-
-    /home/User/logs-converter-output
     '''
     isLogsExists = convert.isLogsExists(path)
     if isLogsExists:
