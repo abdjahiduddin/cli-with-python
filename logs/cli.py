@@ -18,7 +18,7 @@ def get(
     
     isTypeError = convert.typeCheck(type)
     if isTypeError:
-        typer.secho(f'Error: {ERRORS[isTypeError]}',fg=typer.colors.RED)
+        typer.secho(f'Error: {ERRORS[isTypeError]}, json or text',fg=typer.colors.RED)
         raise typer.Exit(1)
     
     isDestPathError = convert.isDestPathCorrect(dst)
