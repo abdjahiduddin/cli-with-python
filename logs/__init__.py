@@ -10,15 +10,11 @@ DST_PATH = Path(typer.get_app_dir(__app_name__))
     SUCCESS,
     FILE_ERROR,
     FILE_TYPE_ERROR,
-    SRC_PATH_ERROR,
     DST_PATH_ERROR,
-    FLAG_ERROR
-) = range(6)
+) = range(4)
 
-ERROR = {
+ERRORS = {
     FILE_ERROR: "file not found",
     FILE_TYPE_ERROR: "file type wrong",
-    SRC_PATH_ERROR: "source path wrong or not found",
     DST_PATH_ERROR: "destination path wrong or not found",
-    FLAG_ERROR: "flag not found"
 }
