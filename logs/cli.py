@@ -12,7 +12,9 @@ def get(
     dst: Optional[str] = typer.Option(DST_PATH, "-o", help="Destination path")
 ):
     '''
-    Default destination directory
+    Get Logs File
+
+    Default destination directory: 
 
     /home/User/logs-converter-output
     '''
