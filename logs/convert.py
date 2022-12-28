@@ -25,7 +25,7 @@ def isDestPathCorrect(path) -> int:
     else:
         return DST_PATH_ERROR
 
-def convertLogs(path, type, dst) -> int:
+def logs(path, type, dst) -> int:
     writePath = ""
     
     if type == "text":
@@ -53,15 +53,4 @@ def readWrite(src, dst) -> int:
     except Exception as e:
         typer.secho(f'{e}',fg=typer.colors.RED)
         return CONVERT_ERROR
-
-
-
-# def logs(path, type, dst):
-#     filename = ""
-#     if str(DST_PATH) == dst:
-#         filename = PurePath(path).stem
-#     else:
-#         filename = PurePath(dst).stem
-#     filename += "." + type
-#     print(filename)
-
+        

@@ -1,5 +1,4 @@
 from pathlib import Path
-import typer
 import os
 
 __app_name__ = "logs"
@@ -7,9 +6,9 @@ __version__ = "0.1.0"
 
 # Create defaul destination if not exists
 home_dir = str(Path.home())
-DST_PATH = os.path.join(home_dir, "logs-converter-result")
-isExists = os.path.isdir(DST_PATH)
-if not isExists:
+DST_PATH = os.path.join(home_dir, "logs-converter-output")
+exists = os.path.isdir(DST_PATH)
+if not exists:
     os.mkdir(DST_PATH)
 
 (

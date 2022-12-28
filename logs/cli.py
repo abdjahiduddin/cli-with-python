@@ -1,32 +1,37 @@
 from typing import Optional
 import typer
 
-from logs import __app_name__, __version__, DST_PATH, ERRORS, helper
+from logs import __app_name__, __version__, DST_PATH, ERRORS, convert
 
 app = typer.Typer(add_completion=False, help="Convert Logs file to JSON or TEXT")
 
 @app.command()
-def convert(
+def get(
     path: str, 
     type: Optional[str] = typer.Option("text", "-t", help="Output type [json|text]"), 
     dst: Optional[str] = typer.Option(DST_PATH, "-o", help="Destination path")
 ):
-    isLogsExists = helper.isLogsExists(path)
+    '''
+    Default destination directory
+
+    /home/User/logs-converter-output
+    '''
+    isLogsExists = convert.isLogsExists(path)
     if isLogsExists:
         typer.secho(f'Error: {ERRORS[isLogsExists]}',fg=typer.colors.RED)
         raise typer.Exit(1)        
     
-    isTypeError = helper.typeCheck(type)
+    isTypeError = convert.typeCheck(type)
     if isTypeError:
         typer.secho(f'Error: {ERRORS[isTypeError]}, json or text',fg=typer.colors.RED)
         raise typer.Exit(1)
     
-    isDestPathError = helper.isDestPathCorrect(dst)
+    isDestPathError = convert.isDestPathCorrect(dst)
     if isDestPathError:
         typer.secho(f'Error: {ERRORS[isDestPathError]}',fg=typer.colors.RED)
         raise typer.Exit(1)
 
-    isError = helper.convertLogs(path, type, dst)
+    isError = convert.logs(path, type, dst)
     if isError:
         typer.secho(f'Error: {ERRORS[isError]}',fg=typer.colors.RED)
         raise typer.Exit(1)
